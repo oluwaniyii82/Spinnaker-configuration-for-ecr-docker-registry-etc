@@ -1,0 +1,12 @@
+aws ecr describe-repositories
+
+ADDRESS=33455667.dkr.ecr.us-west-2.amazonaws.com/aws-eks-spinnaker-us-west-2-deployment01
+REGION=us-west-2
+
+hal config provider docker-registry enable
+
+ 
+hal config provider docker-registry account add ecrropositorydeployment01 \
+ --address $ADDRESS \
+ --username AWS \
+ --password-command "aws --region $REGION ecr get-authorization-token --output text --query 'authorizationData[].authorizationToken' | base64 -d | sed 's/^AWS://'"
