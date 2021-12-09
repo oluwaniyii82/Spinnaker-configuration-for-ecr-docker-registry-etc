@@ -3,7 +3,7 @@ export PASSWORD=mypassword
 echo ${USERNAME}:${PASSWORD} > bitbucket_cred
 cat bitbucket_cred
 hal config artifact bitbucket enable
-hal config artifact bitbucket account add of724d@att.com --username-password-file bitbucket_cred
+hal config artifact bitbucket account add .com --username-password-file bitbucket_cred
 
 bitbucket
 
@@ -11,4 +11,4 @@ bitbucket
 
 
 
-curl -L -X GET --user username:password https://api.bitbucket.org/2.0/repositories/scm/st_dtvvcods/vcods-search-sink-service.git
+curl -L -X GET --user username:password https://api.bitbucket.org/2.0/repositories/scm/st/ink-service.git
